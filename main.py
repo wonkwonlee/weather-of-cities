@@ -12,7 +12,7 @@ city_list = ["Seoul", "Toronto", "Vancouver", "London", "Manchester", "Tokyo", "
 city_code = int(input("어떤 도시의 날씨가 알고싶나요?: "))
 city = city_list[city_code-1]
 
-apikey = "##############################3"
+apikey = "###############################"
 lang = "kr"
 
 api = f"http://api.openweathermap.org/data/2.5/" \
