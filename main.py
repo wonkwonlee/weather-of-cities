@@ -7,12 +7,12 @@ OpenWeatherMap API를 활용하여 세계 특 5가지 도시의 날씨를 알려
 import requests
 import json
 
-print("1. Seoul, 2. Toronto, 3. Vancouver, 4. London, 5. Manchester, 6. Tokyo, 7. New York")
+print("1. 서울, 2. 토론토, 3. 밴쿠버, 4. 런던, 5. 맨체스터, 6. 도쿄, 7. 뉴욕")
 city_list = ["Seoul", "Toronto", "Vancouver", "London", "Manchester", "Tokyo", "New York"]
-city_code = int(input("What city do you want to know the weather?: "))
+city_code = int(input("어떤 도시의 날씨가 알고싶나요?: "))
 city = city_list[city_code-1]
 
-apikey = "################################"
+apikey = "##############################3"
 lang = "kr"
 
 api = f"http://api.openweathermap.org/data/2.5/" \
@@ -23,10 +23,10 @@ result = requests.get(api)
 
 data = json.loads(result.text)
 
-# print(type(data))
+city_kr = ["서울", "토론토", "밴쿠버", "런던", "맨체스터", "도쿄", "뉴욕"]
 
-# 지역 : name
-print(data["name"], "의 날씨입니다.")
+# 지역 : 한글 도시명
+print(city_kr[city_code-1], "의 날씨입니다.")
 # 자세한 날씨 : weather - description
 print("날씨는 ", data["weather"][0]["description"], "입니다.")
 # 현재 온도 : main - temp
